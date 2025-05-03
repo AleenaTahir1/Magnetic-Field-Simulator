@@ -1,4 +1,4 @@
-# 🧲 3D Magnetic Field Explorer
+#  3D Magnetic Field Explorer
 
 An interactive 3D visualization tool for understanding magnetic fields around current-carrying wires and the right-hand rule.
 
@@ -82,18 +82,10 @@ Built using:
 ## 👥 Authors
 
 - Aleena Tahir ([@AleenaTahir1](https://github.com/AleenaTahir1))
-- Saqlain Abbas ([@Razee4315](https://github.com/Razee4315))
 
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-We welcome contributions! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
 
 ## 🌟 Acknowledgments
 

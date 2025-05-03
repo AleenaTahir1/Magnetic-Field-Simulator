@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Magnetic Field Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>3D Magnetic Field Explorer</h1>
+                <p class="subtitle">Interactive Right-Hand Rule</p>
+            </div>
+
+            <div class="control-section">
+                <h2>Current Control</h2>
+                <div class="control-group">
+                    <label>Current Magnitude</label>
+                    <div class="slider-with-value">
+                        <input type="range" id="currentMagnitude" min="0" max="20" value="10" step="0.1">
+                        <span id="currentValue">10.0 A</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Current Direction</label>
+                    <div class="vector-controls">
+                        <div class="vector-slider">
+                            <label>X</label>
+                            <input type="range" id="currentX" min="-10" max="10" value="0" step="0.1">
+                            <span id="currentXValue">0</span>
+                        </div>
+                        <div class="vector-slider">
+                            <label>Y</label>
+                            <input type="range" id="currentY" min="-10" max="10" value="10" step="0.1">
+                            <span id="currentYValue">10</span>
+                        </div>
+                        <div class="vector-slider">
+                            <label>Z</label>
+                            <input type="range" id="currentZ" min="-10" max="10" value="0" step="0.1">
+                            <span id="currentZValue">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h2>Visualization</h2>
+                <div class="control-group">
+                    <label>Field Line Density</label>
+                    <input type="range" id="fieldDensity" min="10" max="50" value="30">
+                </div>
+                <div class="control-group">
+                    <label>Animation Speed</label>
+                    <input type="range" id="animationSpeed" min="0" max="10" value="5">
+                </div>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" id="showFieldLines" checked>
+                        Magnetic Field Lines
+                    </label>
+                    <label>
+                        <input type="checkbox" id="showParticles" checked>
+                        Field Particles
+                    </label>
+                    <label>
+                        <input type="checkbox" id="showAxes" checked>
+                        Coordinate Axes
+                    </label>
+                    <label>
+                        <input type="checkbox" id="showCompass" checked>
+                        3D Compass
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h2>Camera Control</h2>
+                <div class="button-group">
+                    <button id="resetCamera">Reset View</button>
+                    <button id="topView">Top View</button>
+                    <button id="sideView">Side View</button>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h2>Field Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Field Strength:</label>
+                        <span id="fieldStrength">Medium</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Field Direction:</label>
+                        <span id="fieldDirection">Clockwise</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Current Vector:</label>
+                        <span id="currentVector">(0, 1, 0)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="scene-container"></div>
+            <div class="overlay" id="tutorial">
+                <div class="tutorial-content">
+                    <h3>How to Use</h3>
+                    <ol>
+                        <li>Adjust current magnitude using the slider</li>
+                        <li>Set current direction using X, Y, Z controls</li>
+                        <li>Rotate view: Left click + drag</li>
+                        <li>Zoom: Mouse wheel</li>
+                        <li>Pan: Right click + drag</li>
+                    </ol>
+                    <div class="right-hand-rule">
+                        <strong>Right Hand Rule:</strong>
+                        <p>Point your right thumb in the direction of current (yellow arrow).
+                           Your fingers naturally curl in the direction of the magnetic field (blue lines).</p>
+                    </div>
+                    <button id="closeTutorial">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
